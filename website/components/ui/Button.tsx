@@ -3,11 +3,7 @@ type ButtonProps = {
   variant?: "primary" | "secondary";
 };
 
-export default function Button({
-  children,
-  variant = "primary",
-}: ButtonProps) {
-
+export default function Button({ children, variant = "primary" }: ButtonProps) {
   const styles =
     variant === "primary"
       ? "bg-white text-black hover:opacity-80"
@@ -16,14 +12,17 @@ export default function Button({
   return (
     <button
       className={`
-        rounded-lg
-        px-6
-        py-3
-        font-medium
-        transition
-        duration-200
-        ${styles}
-      `}
+      rounded-lg
+      px-6
+      py-3
+      font-medium
+      transition
+      duration-200
+      bg-[var(--primary)]
+      text-white
+      hover:bg-[var(--primary-hover)]
+      ${styles}
+    `}
     >
       {children}
     </button>
