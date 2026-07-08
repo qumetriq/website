@@ -1,3 +1,6 @@
+import FeatureItem from "../ui/FeatureItem";
+import { Shield, Briefcase, Compass, Sparkles } from "lucide-react";
+
 export default function OurPrinciples() {
   return (
     <section className="py-32">
@@ -17,41 +20,29 @@ export default function OurPrinciples() {
       </div>
 
       <div className="grid gap-8 md:grid-cols-2">
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-          <h3 className="text-2xl font-semibold">Precision First</h3>
+        <FeatureItem
+          icon={Shield}
+          title="Precision First"
+          description="Every tool is designed to deliver accurate results with a clean, distraction-free experience."
+        />
 
-          <p className="mt-4 leading-8 text-[var(--muted)]">
-            Every tool is designed to deliver accurate results with a clean,
-            distraction-free experience.
-          </p>
-        </div>
+        <FeatureItem
+          icon={Briefcase}
+          title="Built for Professionals"
+          description="We don't build software for everyone. We build software for traders who demand reliability."
+        />
 
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-          <h3 className="text-2xl font-semibold">Built for Professionals</h3>
+        <FeatureItem
+          icon={Compass}
+          title="Long-Term Vision"
+          description="Our products are designed to evolve continuously with new features, improvements and support."
+        />
 
-          <p className="mt-4 leading-8 text-[var(--muted)]">
-            We don't build software for everyone. We build software for traders
-            who demand reliability.
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-          <h3 className="text-2xl font-semibold">Long-Term Vision</h3>
-
-          <p className="mt-4 leading-8 text-[var(--muted)]">
-            Our products are designed to evolve continuously with new features,
-            improvements and support.
-          </p>
-        </div>
-
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
-          <h3 className="text-2xl font-semibold">Simple by Design</h3>
-
-          <p className="mt-4 leading-8 text-[var(--muted)]">
-            Powerful software doesn't have to be complicated. Simplicity is a
-            feature, not a limitation.
-          </p>
-        </div>
+        <FeatureItem
+          icon={Sparkles}
+          title="Simple by Design"
+          description="Powerful software doesn't have to be complicated. Simplicity is a feature, not a limitation."
+        />
       </div>
     </section>
   );

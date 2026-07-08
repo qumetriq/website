@@ -6,23 +6,33 @@ type ButtonProps = {
 export default function Button({ children, variant = "primary" }: ButtonProps) {
   const styles =
     variant === "primary"
-      ? "bg-white text-black hover:opacity-80"
-      : "border border-white text-white hover:bg-white hover:text-black";
+      ? `
+        bg-[var(--primary)]
+        text-white
+        hover:bg-[var(--primary-hover)]
+        shadow-lg shadow-orange-500/10
+      `
+      : `
+        border border-white/10
+        bg-white/5
+        text-white
+        hover:bg-white
+        hover:text-black
+      `;
 
   return (
     <button
       className={`
-      rounded-lg
-      px-6
-      py-3
-      font-medium
-      transition
-      duration-200
-      bg-[var(--primary)]
-      text-white
-      hover:bg-[var(--primary-hover)]
-      ${styles}
-    `}
+        rounded-xl
+        px-6
+        py-3
+        text-sm
+        font-semibold
+        transition-all
+        duration-300
+        hover:-translate-y-0.5
+        ${styles}
+      `}
     >
       {children}
     </button>
