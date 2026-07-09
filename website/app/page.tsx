@@ -7,6 +7,7 @@ import TrustSection from "../components/home/TrustSection";
 import FeaturedProducts from "../components/products/FeaturedProducts";
 import OurPrinciples from "../components/home/OurPrinciples";
 import DevelopmentProcess from "../components/process/DevelopmentProcess";
+import Footer from "../components/footer/Footer";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <OurPrinciples />
         <FeaturedProducts />
       </Container>
+      <Footer />
     </>
   );
 }
