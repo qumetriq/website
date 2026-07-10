@@ -1,27 +1,28 @@
 import Section from "../layout/Section";
 
-type CategorySectionProps = {
-  category: string;
+type Category = {
+  id: string;
+  name: string;
   title: string;
   description: string;
 };
 
-export default function CategorySection({
-  category,
-  title,
-  description,
-}: CategorySectionProps) {
+type CategorySectionProps = {
+  category: Category;
+};
+
+export default function CategorySection({ category }: CategorySectionProps) {
   return (
     <Section>
       <div className="max-w-3xl">
         <p className="text-sm uppercase tracking-[0.3em] text-[var(--primary)]">
-          {category}
+          {category.name.toUpperCase()}
         </p>
 
-        <h2 className="mt-6 text-5xl font-bold">{title}</h2>
+        <h2 className="mt-6 text-5xl font-bold">{category.title}</h2>
 
         <p className="mt-6 text-xl leading-9 text-[var(--muted)]">
-          {description}
+          {category.description}
         </p>
       </div>
     </Section>

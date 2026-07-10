@@ -1,9 +1,15 @@
-import TradingPlatforms from "../../components/products/TradingPlatforms";
+import { products } from "../../data/products";
 import CategorySection from "../../components/categories/CategorySection";
 import Container from "../../components/layout/Container";
 import Header from "../../components/layout/Header";
+import { categories } from "../../data/categories";
+import ProductGrid from "../../components/products/ProductGrid";
 
 export default function ProductsPage() {
+  const tradingPlatformsCategory = categories.find(
+    (category) => category.id === "trading-platforms",
+  );
+
   return (
     <>
       <Container>
@@ -25,13 +31,15 @@ export default function ProductsPage() {
 
           {/* <ProductCategories /> */}
 
-          <CategorySection
-            category="TRADING PLATFORMS"
-            title="Desktop software engineered for professional traders."
-            description="Professional applications focused on execution, workflow efficiency and reliability throughout every trading session."
-          />
+          {tradingPlatformsCategory && (
+            <CategorySection category={tradingPlatformsCategory} />
+          )}
 
-          <TradingPlatforms />
+          <ProductGrid
+            products={products.filter(
+              (product) => product.category === "trading-platforms",
+            )}
+          />
         </main>
       </Container>
     </>
