@@ -6,10 +6,6 @@ import { categories } from "../../data/categories";
 import ProductGrid from "../../components/products/ProductGrid";
 
 export default function ProductsPage() {
-  const tradingPlatformsCategory = categories.find(
-    (category) => category.id === "trading-platforms",
-  );
-
   return (
     <>
       <Container>
@@ -31,15 +27,17 @@ export default function ProductsPage() {
 
           {/* <ProductCategories /> */}
 
-          {tradingPlatformsCategory && (
-            <CategorySection category={tradingPlatformsCategory} />
-          )}
+          {categories.map((category) => (
+            <div key={category.id}>
+              <CategorySection category={category} />
 
-          <ProductGrid
-            products={products.filter(
-              (product) => product.category === "trading-platforms",
-            )}
-          />
+              <ProductGrid
+                products={products.filter(
+                  (product) => product.category === category.id,
+                )}
+              />
+            </div>
+          ))}
         </main>
       </Container>
     </>
